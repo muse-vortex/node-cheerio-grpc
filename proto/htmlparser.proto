@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package htmlParserPackage;
+
+service HtmlParser {
+  rpc Health(HealthRequest) returns (HealthResponse) {};
+  rpc ParseHtml(ParseHtmlRequest) returns (ParseHtmlResponse) {};
+}
+
+message HealthRequest {
+}
+
+message HealthResponse {
+  string message = 1;
+}
+
+message ParseHtmlRequest {
+  string html_content = 1;
+  string parse_script = 2;
+}
+
+message ParseHtmlResponse {
+  string data = 1;
+}
